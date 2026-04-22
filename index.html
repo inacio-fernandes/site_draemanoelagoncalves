@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Dra. Emanoela Gonçalves — Medicina Vascular e Endovascular</title>
 <meta name="description" content="Dra. Emanoela Gonçalves, médica vascular e endovascular. CRM SP-243777. Atendimento em São Paulo — Rede São Camilo, Rede D'Or, Rede Américas, Prime Care, Anália Franco." />
+<link rel="icon" type="image/svg+xml" href="assets/logo_dark.png" />
+<link rel="shortcut icon" href="assets/logo.ico_dark.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -399,6 +401,13 @@
     transition: opacity .3s ease;
   }
   .logo-cell:hover { opacity: 1; }
+  .logo-cell img {
+    max-width: 180px;
+    max-height: 72px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
   @keyframes scroll {
     from { transform: translateX(0); }
     to   { transform: translateX(calc(-260px * 5)); }
@@ -735,6 +744,7 @@
     margin-bottom: 20px;
   }
   footer .brand-mark { background: var(--bg); color: var(--navy); }
+  footer img.brand-mark { padding: 4px; object-fit: contain; }
   footer .brand-text .name { color: var(--bg); }
   footer .brand-text .sub { color: rgba(250,246,239,0.5); }
   footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
@@ -848,7 +858,7 @@
 <header class="nav" id="nav">
   <div class="container nav-row">
     <a class="brand" href="#top" aria-label="Dra. Emanoela Gonçalves">
-      <img class="brand-mark" src="logo.svg" alt="Logo Dra. Emanoela Gonçalves" />
+      <img class="brand-mark" src="assets/logo.svg" alt="Logo Dra. Emanoela Gonçalves" />
       <span class="brand-text">
         <span class="name">Dra. Emanoela Gonçalves</span>
         <span class="sub">Cirurgia Vascular e Endovascular</span>
@@ -877,7 +887,7 @@
   <div class="mobile-menu" id="mobmenu" aria-hidden="true">
     <div class="mobile-menu-head">
       <div class="brand-line">
-        <img class="mk" src="logo.svg" alt="Logo Dra. Emanoela Gonçalves" />
+        <img class="mk" src="assets/logo.svg" alt="Logo Dra. Emanoela Gonçalves" />
         <span>Emanoela Gonçalves</span>
       </div>
       <button class="mobile-close" id="mob-close" aria-label="Fechar menu">
@@ -937,7 +947,7 @@
     </div>
 
     <div class="hero-portrait reveal" style="transition-delay:.1s">
-      <img src="principal.png" alt="Dra. Emanoela Gonçalves" />
+      <img src="assets/principal.png" alt="Dra. Emanoela Gonçalves" />
     </div>
   </div>
 </section>
@@ -960,17 +970,17 @@
 
     <div class="carousel-track" id="track">
       <!-- set 1 -->
-      <div class="logo-cell"><div class="logo-mark"><span class="big">São Camilo</span><span class="sm">Rede Hospitalar</span></div></div>
-      <div class="logo-cell"><div class="logo-mark"><span class="big" style="letter-spacing:-0.02em;">Rede D'Or</span><span class="sm">São Luiz</span></div></div>
-      <div class="logo-cell"><div class="logo-mark"><span class="big">Américas</span><span class="sm">Rede de Saúde</span></div></div>
-      <div class="logo-cell"><div class="logo-mark"><span class="mono"><span class="glyph">P</span>PRIME CARE</span><span class="sm">Clínica</span></div></div>
-      <div class="logo-cell"><div class="logo-mark"><span class="big" style="font-size:22px;">Endovascular</span><span class="sm">Anália Franco</span></div></div>
+      <div class="logo-cell"><img src="assets/sao_camilo.png" alt="São Camilo" /></div>
+      <div class="logo-cell"><img src="assets/rede_dor.png" alt="Rede D'Or" /></div>
+      <div class="logo-cell"><img src="assets/image.png" alt="Américas Medicina e Saúde" /></div>
+      <div class="logo-cell"><img src="assets/prime_care.png" alt="Prime Care" /></div>
+      <div class="logo-cell"><img src="assets/endovascular.png" alt="Clínica Endovascular Anália Franco" /></div>
       <!-- set 2 duplicate for seamless loop -->
-      <div class="logo-cell"><div class="logo-mark"><span class="big">São Camilo</span><span class="sm">Rede Hospitalar</span></div></div>
-      <div class="logo-cell"><div class="logo-mark"><span class="big" style="letter-spacing:-0.02em;">Rede D'Or</span><span class="sm">São Luiz</span></div></div>
-      <div class="logo-cell"><div class="logo-mark"><span class="big">Américas</span><span class="sm">Rede de Saúde</span></div></div>
-      <div class="logo-cell"><div class="logo-mark"><span class="mono"><span class="glyph">P</span>PRIME CARE</span><span class="sm">Clínica</span></div></div>
-      <div class="logo-cell"><div class="logo-mark"><span class="big" style="font-size:22px;">Endovascular</span><span class="sm">Anália Franco</span></div></div>
+      <div class="logo-cell"><img src="assets/sao_camilo.png" alt="São Camilo" /></div>
+      <div class="logo-cell"><img src="assets/rede_dor.png" alt="Rede D'Or" /></div>
+      <div class="logo-cell"><img src="assets/image.png" alt="Américas Medicina e Saúde" /></div>
+      <div class="logo-cell"><img src="assets/prime_care.png" alt="Prime Care" /></div>
+      <div class="logo-cell"><img src="assets/endovascular.png" alt="Clínica Endovascular Anália Franco" /></div>
     </div>
   </div>
 </section>
@@ -994,9 +1004,9 @@
     </div>
 
     <div class="about-media reveal" style="transition-delay:.1s">
-      <div class="m tall"><img src="clinica.png" alt="Equipe clínica" /></div>
-      <div class="m"><img src="procedimento.png" alt="Consultório" /></div>
-      <div class="m"><img src="equipe.png" alt="Procedimento" /></div>
+      <div class="m tall"><img src="assets/clinica.png" alt="Equipe clínica" /></div>
+      <div class="m"><img src="assets/procedimento.png" alt="Consultório" /></div>
+      <div class="m"><img src="assets/equipe.png" alt="Procedimento" /></div>
     </div>
   </div>
 </section>
@@ -1130,7 +1140,7 @@
     <div class="footer-grid">
       <div>
         <a class="brand" href="#top" style="text-decoration:none;">
-          <span class="brand-mark">e</span>
+          <img class="brand-mark" src="assets/logo_dark.png" alt="Logo Dra. Emanoela Gonçalves" />
           <span class="brand-text">
             <span class="name">Dra. Emanoela Gonçalves</span>
             <span class="sub">CRM SP &middot; 243777</span>

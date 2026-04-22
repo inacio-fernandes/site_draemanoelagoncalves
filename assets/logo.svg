@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Logotipo_Alternativo" data-name="Logotipo Alternativo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+<svg id="Logotipo_Alternativo" data-name="Logotipo Alternativo" xmlns="http://www.w3.org/2000/svg" viewBox="360 360 360 360">
   <defs>
     <style>
       .cls-1 {
@@ -11,8 +11,7 @@
       }
     </style>
   </defs>
-  <rect class="cls-1" x="-10" y="-10" width="1100" height="1100"/>
-  <g>
+  <g transform="translate(-324 -324) scale(1.6)">
     <g>
       <g>
         <path class="cls-2" d="M421.01,484.29l-9.53-4.82,3.3-6.53,1.47.74-2.46,4.86,2.47,1.25,2.41-4.76,1.47.74-2.41,4.76,2.64,1.34,2.46-4.86,1.47.74-3.3,6.53Z"/>
