@@ -1,0 +1,1334 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dra. Emanoela Gonçalves — Medicina Vascular e Endovascular</title>
+<meta name="description" content="Dra. Emanoela Gonçalves, médica vascular e endovascular. CRM SP-243777. Atendimento em São Paulo — Rede São Camilo, Rede D'Or, Rede Américas, Prime Care, Anália Franco." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ---------- Tokens ---------- */
+  :root {
+    --ink:        #1a2a33;      /* primary text / deep teal-ink */
+    --ink-soft:   #3d535e;
+    --ink-mute:   #6b7f89;
+    --line:       #e2d9cc;      /* warm hairline */
+    --line-soft:  #efe8dc;
+    --bg:         #faf6ef;      /* cream */
+    --bg-alt:     #f3ecde;      /* warmer cream */
+    --card:       #ffffff;
+    --navy:       #0f2d3a;      /* deep medical navy */
+    --navy-2:     #163d4d;
+    --accent:     #b89968;      /* warm gold from earrings */
+    --accent-soft:#d9c5a2;
+    --blush:      #e8ddd0;
+    --whatsapp:   #25d366;
+    --whatsapp-d: #128c7e;
+
+    --radius-s: 6px;
+    --radius:   14px;
+    --radius-l: 22px;
+
+    --fs-display: clamp(44px, 6.4vw, 92px);
+    --fs-h1: clamp(34px, 4.2vw, 56px);
+    --fs-h2: clamp(26px, 3vw, 40px);
+    --fs-h3: clamp(20px, 1.6vw, 24px);
+    --fs-lead: clamp(17px, 1.25vw, 20px);
+    --fs-body: 16px;
+    --fs-small: 13px;
+
+    --container: 1240px;
+  }
+
+  *,*::before,*::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    font-size: var(--fs-body);
+    line-height: 1.55;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    max-width: 100vw;
+  }
+  h1,h2,h3,h4 { font-family: 'Cormorant Garamond', 'Times New Roman', serif; font-weight: 500; letter-spacing: -0.01em; color: var(--navy); margin: 0; line-height: 1.05; }
+  p { margin: 0; text-wrap: pretty; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; cursor: pointer; border: 0; background: none; }
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 28px; }
+  @media (max-width: 640px){ .container{ padding: 0 20px; } }
+
+  .eyebrow {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content:'';
+    width: 28px; height: 1px; background: var(--accent);
+  }
+
+  /* ---------- Header ---------- */
+  header.nav {
+    position: sticky; top: 0; z-index: 40;
+    background: color-mix(in oklab, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .25s ease, background .25s ease;
+  }
+  body.menu-open header.nav { z-index: 45; }
+  header.nav.scrolled { border-color: var(--line); }
+  .nav-row {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 78px;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .brand-mark {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: grid; place-items: center;
+    color: var(--bg);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-style: italic; font-weight: 500;
+    letter-spacing: -0.03em;
+  }
+  img.brand-mark {
+    object-fit: contain;
+    padding: 6px;
+  }
+  .brand-text { display: grid; gap: 4px; line-height: 1.15; }
+  .brand-text .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px; font-weight: 500; color: var(--navy);
+    letter-spacing: 0.01em;
+  }
+  .brand-text .sub {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-mute); font-weight: 400;
+  }
+  nav ul { display: flex; gap: 36px; list-style: none; padding: 0; margin: 0; }
+  nav a {
+    font-size: 14px; color: var(--ink-soft); font-weight: 400;
+    position: relative; padding: 6px 0;
+  }
+  nav a::after {
+    content:''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+    background: var(--navy); transform: scaleX(0); transform-origin: left;
+    transition: transform .3s ease;
+  }
+  nav a:hover { color: var(--navy); }
+  nav a:hover::after { transform: scaleX(1); }
+
+  .cta-whatsapp {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 22px; border-radius: 999px;
+    background: var(--navy); color: var(--bg);
+    font-size: 14px; font-weight: 500; letter-spacing: 0.01em;
+    transition: transform .2s ease, background .2s ease;
+  }
+  .cta-whatsapp:hover { background: var(--navy-2); transform: translateY(-1px); }
+  .cta-whatsapp svg { width: 16px; height: 16px; }
+
+  .hamburger {
+    display: none; width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid var(--line);
+    align-items: center; justify-content: center;
+    background: transparent;
+  }
+  .hamburger span {
+    display: block; width: 18px; height: 1.5px; background: var(--navy);
+    position: relative;
+  }
+  .hamburger span::before, .hamburger span::after{
+    content:''; position:absolute; left:0; width:18px; height:1.5px; background: var(--navy);
+    transition: transform .3s ease, top .3s ease;
+  }
+  .hamburger span::before { top: -6px; }
+  .hamburger span::after { top: 6px; }
+  body.menu-open .hamburger span { background: transparent; }
+  body.menu-open .hamburger span::before { top: 0; transform: rotate(45deg); }
+  body.menu-open .hamburger span::after  { top: 0; transform: rotate(-45deg); }
+
+  @media (max-width: 960px) {
+    nav.primary { display:none; }
+    .cta-whatsapp.header-cta { display:none; }
+    .hamburger { display: inline-flex; }
+  }
+
+  /* ---------- Mobile menu ---------- */
+  .mobile-menu {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw; height: 100vh; height: 100dvh;
+    background: var(--navy);
+    color: var(--bg);
+    padding: 24px;
+    z-index: 60;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  body.menu-open { overflow: hidden; }
+  body.menu-open .mobile-menu { display: flex; }
+
+  .mobile-menu-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(250,246,239,0.14);
+    margin-bottom: 8px;
+  }
+  .mobile-menu-head .brand-line {
+    display: flex; align-items: center; gap: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 18px;
+    color: var(--bg);
+    white-space: nowrap;
+  }
+  .mobile-menu-head .brand-line img {
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+    border-radius: 50%;
+    border: 1px solid rgba(250,246,239,0.3);
+    object-fit: contain;
+    background: transparent;
+    flex-shrink: 0;
+  }
+  .mobile-menu-head .brand-line .mk {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1px solid rgba(250,246,239,0.3);
+    display: grid; place-items: center;
+    font-size: 18px;
+  }
+
+  .mobile-menu ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
+  .mobile-menu a.nav-link {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 4px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px; color: var(--bg);
+    border-bottom: 1px solid rgba(250,246,239,0.12);
+    line-height: 1.1; letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .mobile-menu a.nav-link .arrow {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px; color: var(--accent-soft);
+    opacity: 0.55;
+  }
+  .mobile-menu .cta-whatsapp {
+    margin-top: 32px; width: 100%; justify-content: center;
+    padding: 18px 24px; font-size: 15px;
+    background: var(--whatsapp); color: #fff;
+  }
+  .mobile-menu .cta-whatsapp:hover { background: var(--whatsapp-d); }
+  .mobile-menu-foot {
+    margin-top: 20px; padding-top: 20px;
+    border-top: 1px solid rgba(250,246,239,0.12);
+    font-size: 11px; color: rgba(250,246,239,0.55);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    text-align: center;
+  }
+  .mobile-close {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid rgba(250,246,239,0.22);
+    display: grid; place-items: center;
+    color: var(--bg);
+    background: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .mobile-close svg { width: 16px; height: 16px; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; padding: 64px 0 100px;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 72px; align-items: center;
+  }
+  .hero-copy .eyebrow { margin-bottom: 28px; }
+  .hero h1 {
+    font-size: var(--fs-display);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+    margin-bottom: 28px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .hero .lede {
+    font-size: var(--fs-lead);
+    color: var(--ink-soft);
+    max-width: 52ch;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 32px;
+    margin-bottom: 44px;
+    padding: 24px 0; border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-meta .item { display: grid; gap: 2px; }
+  .hero-meta .k {
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .hero-meta .v {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; color: var(--navy);
+  }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 14px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 28px; border-radius: 999px;
+    font-size: 15px; font-weight: 500;
+    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .btn-primary { background: var(--navy); color: var(--bg); }
+  .btn-primary:hover { background: var(--navy-2); transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent; color: var(--navy); border: 1px solid var(--navy);
+  }
+  .btn-ghost:hover { background: var(--navy); color: var(--bg); }
+
+  .hero-portrait {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 0;
+    overflow: hidden;
+    background: var(--blush);
+    box-shadow: 0 30px 80px -40px rgba(15,45,58,0.35);
+  }
+  .hero-portrait img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
+  }
+  .hero-portrait::after {
+    content:''; position:absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(15,45,58,0.12));
+  }
+  .hero-badge {
+    position: absolute; left: -28px; bottom: 60px;
+    background: var(--bg); padding: 18px 22px; border-radius: 100px;
+    display: flex; align-items: center; gap: 14px;
+    box-shadow: 0 20px 40px -20px rgba(15,45,58,0.25);
+    border: 1px solid var(--line);
+  }
+  .hero-badge .dot {
+    width: 10px; height: 10px; border-radius: 50%; background: #41a56c;
+    box-shadow: 0 0 0 4px rgba(65,165,108,0.15);
+  }
+  .hero-badge .lbl { font-size: 13px; color: var(--ink-soft); }
+  .hero-badge .lbl b { color: var(--navy); font-weight: 500; }
+
+  .hero-deco {
+    position: absolute; right: -120px; top: -120px;
+    width: 420px; height: 420px; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(184,153,104,0.18), transparent 70%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero { padding: 36px 0 72px; }
+    .hero-portrait { max-width: 460px; margin: 0 auto; border-radius: 0; }
+    .hero-badge { left: 12px; }
+  }
+
+  /* ---------- Carousel ---------- */
+  .clinics {
+    padding: 56px 0;
+    background: var(--bg-alt);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .clinics-head {
+    display: flex; align-items: end; justify-content: space-between;
+    gap: 32px; margin-bottom: 36px; flex-wrap: wrap;
+  }
+  .clinics-head .ttl {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 2vw, 28px); color: var(--navy);
+    max-width: 38ch; font-style: italic;
+  }
+  .carousel {
+    position: relative; overflow: hidden;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding-inline: clamp(20px, 2vw, 28px);
+  }
+  .carousel-track {
+    display: flex; gap: 0; align-items: center;
+    width: max-content;
+    will-change: transform;
+    animation: scroll 32s linear infinite;
+  }
+  .carousel:hover .carousel-track { animation-play-state: paused; }
+  .logo-cell {
+    flex: 0 0 auto;
+    width: 260px; height: 110px;
+    display: grid; place-items: center;
+    color: var(--navy);
+    padding: 0 28px;
+    border-right: 1px solid var(--line);
+    opacity: 0.7;
+    transition: opacity .3s ease;
+  }
+  .logo-cell:hover { opacity: 1; }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(calc(-260px * 5)); }
+  }
+  /* Logos are original typographic/SVG marks referencing the networks by name. */
+  .logo-mark {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center; line-height: 1.05;
+    display: grid; gap: 4px;
+    color: var(--navy);
+  }
+  .logo-mark .big { font-size: 26px; font-weight: 500; letter-spacing: 0.01em; }
+  .logo-mark .sm  {
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--ink-mute); font-weight: 400;
+  }
+  .logo-mark .mono {
+    display: inline-flex; align-items: center; gap: 10px; justify-content: center;
+    font-family: 'Outfit', sans-serif; font-size: 13px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .logo-mark .glyph {
+    display: inline-grid; place-items: center;
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--navy); color: var(--bg);
+    font-family: 'Cormorant Garamond', serif; font-size: 14px; font-style: italic;
+  }
+  .carousel-ctrl {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--bg); border: 1px solid var(--line);
+    display: grid; place-items: center; z-index: 2;
+    transition: transform .2s ease;
+  }
+  .carousel-ctrl:hover { transform: translateY(-50%) scale(1.06); }
+  .carousel-ctrl.left  { left: 12px; }
+  .carousel-ctrl.right { right: 12px; }
+  .carousel-ctrl svg { width: 16px; height: 16px; color: var(--navy); }
+
+  /* ---------- About ---------- */
+  .about { padding: 120px 0; }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 96px; align-items: start;
+  }
+  .about h2 {
+    font-size: var(--fs-h1);
+    letter-spacing: -0.02em;
+    margin: 24px 0 36px;
+    font-weight: 400;
+  }
+  .about h2 em { font-style: italic; color: var(--accent); }
+  .about-copy p {
+    color: var(--ink-soft);
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+    max-width: 58ch;
+  }
+  .about-pull {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 24px; line-height: 1.4;
+    color: var(--navy);
+    padding: 32px 0 0;
+    margin-top: 32px;
+    max-width: 52ch;
+  }
+  .about-pull::before { content: '"'; color: var(--accent); font-size: 64px; line-height: 0; display: block; margin-bottom: 18px; }
+
+  .credentials {
+    margin-top: 44px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+  .cred-item {
+    padding: 22px 24px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .cred-item .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px; color: var(--navy); font-weight: 500;
+    line-height: 1; margin-bottom: 10px;
+  }
+  .cred-item .lbl { font-size: 13px; color: var(--ink-mute); letter-spacing: 0.02em; }
+
+  .about-media {
+    position: sticky; top: 100px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    grid-template-rows: 340px 220px;
+    gap: 16px;
+  }
+  .about-media .m {
+    border-radius: 16px; overflow: hidden;
+    background: var(--blush);
+  }
+  .about-media .m img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .about-media .m.tall { grid-row: 1 / span 2; }
+  .about-media .m.ph {
+    background: linear-gradient(135deg, #d9c5a2 0%, #e8ddd0 100%);
+    display: grid; place-items: center;
+    font-family: 'Outfit', monospace;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--navy); text-align: center; padding: 12px;
+    position: relative;
+  }
+  .about-media .m.ph::before {
+    content:''; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(45deg, transparent 0 22px, rgba(15,45,58,0.05) 22px 23px);
+  }
+  .about-media .m.ph span { position: relative; z-index: 1; }
+
+  @media (max-width: 900px) {
+    .about { padding: 80px 0; }
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .about-media { position: static; grid-template-rows: 260px 180px; }
+  }
+
+  /* ---------- Services ---------- */
+  .services {
+    padding: 120px 0;
+    background: var(--navy);
+    color: var(--bg);
+  }
+  .services .eyebrow { color: var(--accent-soft); }
+  .services .eyebrow::before { background: var(--accent-soft); }
+  .services h2 {
+    color: var(--bg); font-size: var(--fs-h1);
+    font-weight: 400; letter-spacing: -0.02em;
+    max-width: 18ch;
+  }
+  .services h2 em { font-style: italic; color: var(--accent-soft); }
+  .services-head {
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: 72px; align-items: end; margin-bottom: 72px;
+  }
+  .services-head p {
+    color: rgba(250,246,239,0.65);
+    font-size: 17px; line-height: 1.7; max-width: 48ch;
+  }
+  .svc-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid rgba(250,246,239,0.14);
+  }
+  .svc {
+    padding: 40px 32px 40px 32px;
+    border-right: 1px solid rgba(250,246,239,0.14);
+    border-bottom: 1px solid rgba(250,246,239,0.14);
+    position: relative;
+    transition: background .3s ease;
+  }
+  .svc:nth-child(3n) { border-right: none; }
+  .svc:first-child { padding-left: 0; }
+  .svc:nth-child(3n+1) { padding-left: 0; }
+  .svc:hover { background: rgba(250,246,239,0.03); }
+  .svc:hover h3 { color: var(--accent-soft); }
+  .svc h3 { transition: color .25s ease; }
+  .svc .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; color: var(--accent-soft);
+    font-size: 15px; margin-bottom: 26px;
+    display: block;
+  }
+  .svc h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--bg); font-size: 26px; font-weight: 500;
+    margin-bottom: 14px; letter-spacing: -0.005em;
+  }
+  .svc p {
+    color: rgba(250,246,239,0.6); font-size: 14.5px; line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .svc-tags {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .svc-tag {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(250,246,239,0.55);
+    padding: 5px 10px;
+    border: 1px solid rgba(250,246,239,0.2); border-radius: 999px;
+  }
+
+  @media (max-width: 960px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } .svc { padding: 36px 24px; border-right: 1px solid rgba(250,246,239,0.14); } .svc:nth-child(3n), .svc:nth-child(3n+1) { padding-left: 24px; } .svc:nth-child(2n){ border-right: none; } .svc:first-child { padding-left: 24px; } .services-head { grid-template-columns: 1fr; gap: 24px; } }
+  @media (max-width: 600px) { .svc-grid { grid-template-columns: 1fr; } .svc, .svc:nth-child(n){ border-right: none; padding: 32px 20px; } .services{ padding: 80px 0; } }
+
+  /* ---------- Contact ---------- */
+  .contact { padding: 120px 0; }
+  .contact-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: start;
+  }
+  .contact h2 {
+    font-size: var(--fs-h1); font-weight: 400; letter-spacing: -0.02em;
+    margin: 24px 0 28px;
+  }
+  .contact h2 em { font-style: italic; color: var(--accent); }
+  .contact-lede { color: var(--ink-soft); font-size: 17px; line-height: 1.7; max-width: 48ch; margin-bottom: 44px; }
+
+  .channels { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .channel {
+    display: grid; grid-template-columns: 56px 1fr auto;
+    align-items: center; gap: 20px;
+    padding: 22px 4px;
+    border-bottom: 1px solid var(--line);
+    transition: background .25s ease;
+    min-width: 0;
+  }
+  .channel .v { min-width: 0; overflow-wrap: anywhere; word-break: break-word; }
+  .channel .ico {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid var(--line);
+    display: grid; place-items: center;
+    color: var(--navy);
+    transition: background .25s ease, color .25s ease, border-color .25s ease;
+  }
+  .channel .ico svg { width: 18px; height: 18px; }
+  .channel:hover .ico { background: var(--navy); color: var(--bg); border-color: var(--navy); }
+  .channel:hover { padding-left: 16px; }
+  .channel .k {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+  }
+  .channel .v {
+    font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--navy);
+  }
+  .channel .v small { font-family: 'Outfit', sans-serif; font-size: 14px; color: var(--ink-mute); font-weight: 400; display: block; margin-top: 2px; }
+  .channel .arrow {
+    width: 38px; height: 38px; border-radius: 50%;
+    border: 1px solid var(--line);
+    display: grid; place-items: center;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+  }
+  .channel:hover .arrow { background: var(--navy); color: var(--bg); transform: rotate(-45deg); border-color: var(--navy); }
+
+  .map-card {
+    position: sticky; top: 100px;
+    border-radius: 18px; overflow: hidden;
+    background: var(--card); border: 1px solid var(--line);
+  }
+  .map-loc-select-wrap {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--line);
+    background: color-mix(in oklab, var(--card) 88%, var(--bg-alt));
+  }
+  .map-loc-select-wrap label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 8px;
+  }
+  .map-loc-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--navy);
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    outline: none;
+  }
+  .map-loc-select:focus { border-color: var(--navy); }
+  .map-frame {
+    aspect-ratio: 4/3;
+    position: relative; overflow: hidden;
+    background:
+      radial-gradient(circle at 30% 40%, rgba(184,153,104,0.1), transparent 40%),
+      radial-gradient(circle at 70% 70%, rgba(15,45,58,0.06), transparent 50%),
+      var(--bg-alt);
+  }
+  .map-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .map-frame svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .map-pin {
+    position: absolute; left: 50%; top: 48%;
+    transform: translate(-50%, -100%);
+    display: grid; place-items: center; gap: 0;
+    z-index: 2;
+  }
+  .map-pin .pin-dot {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 8px rgba(184,153,104,0.25), 0 0 0 18px rgba(184,153,104,0.12);
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 0 0 8px rgba(184,153,104,0.25), 0 0 0 18px rgba(184,153,104,0.12); }
+    50%     { box-shadow: 0 0 0 12px rgba(184,153,104,0.2), 0 0 0 26px rgba(184,153,104,0.06); }
+  }
+  .map-info {
+    padding: 22px 24px; border-top: 1px solid var(--line);
+  }
+  .map-info .place { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--navy); margin-bottom: 4px; }
+  .map-info .addr { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+  .map-info .open-maps {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; color: var(--navy); margin-top: 12px;
+    padding-bottom: 2px; border-bottom: 1px solid var(--navy);
+  }
+
+  @media (max-width: 900px) {
+    .contact { padding: 80px 0; }
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .channel { grid-template-columns: 44px 1fr auto; gap: 16px; padding: 18px 2px; }
+    .channel .v { font-size: 17px; }
+    .channel .v small { font-size: 13px; }
+    .map-card { position: static; }
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy);
+    color: rgba(250,246,239,0.7);
+    padding: 72px 0 32px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 48px; margin-bottom: 56px;
+  }
+  footer h4 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--bg); font-size: 12px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.22em;
+    margin-bottom: 20px;
+  }
+  footer .brand-mark { background: var(--bg); color: var(--navy); }
+  footer .brand-text .name { color: var(--bg); }
+  footer .brand-text .sub { color: rgba(250,246,239,0.5); }
+  footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  footer a { font-size: 14px; color: rgba(250,246,239,0.7); transition: color .2s ease; }
+  footer a:hover { color: var(--bg); }
+  .footer-tag {
+    font-size: 13px; line-height: 1.7; max-width: 28ch;
+    margin: 20px 0 0;
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(250,246,239,0.12);
+    padding-top: 24px;
+    display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    font-size: 12px; color: rgba(250,246,239,0.5);
+  }
+
+  @media (max-width: 800px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+  @media (max-width: 500px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Floating WhatsApp ---------- */
+  .wa-fab {
+    position: fixed; right: 24px; bottom: 24px; z-index: 50;
+    width: 62px; height: 62px; border-radius: 50%;
+    background: var(--whatsapp);
+    display: grid; place-items: center;
+    box-shadow: 0 16px 40px -10px rgba(37,211,102,0.55), 0 0 0 0 rgba(37,211,102,0.5);
+    animation: fabPulse 2.4s ease-out infinite;
+    transition: transform .2s ease;
+  }
+  .wa-fab:hover { transform: scale(1.06); }
+  .wa-fab svg { width: 30px; height: 30px; color: white; }
+  @keyframes fabPulse {
+    0%   { box-shadow: 0 16px 40px -10px rgba(37,211,102,0.55), 0 0 0 0 rgba(37,211,102,0.5); }
+    70%  { box-shadow: 0 16px 40px -10px rgba(37,211,102,0.55), 0 0 0 22px rgba(37,211,102,0); }
+    100% { box-shadow: 0 16px 40px -10px rgba(37,211,102,0.55), 0 0 0 0 rgba(37,211,102,0); }
+  }
+
+  /* ---------- Modal ---------- */
+  .modal-scrim {
+    position: fixed; inset: 0; background: rgba(15,45,58,0.45);
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    z-index: 100;
+    display: grid; place-items: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity .3s ease;
+    padding: 20px;
+  }
+  .modal-scrim.open { opacity: 1; pointer-events: auto; }
+  .modal {
+    background: var(--bg);
+    border-radius: 22px;
+    max-width: 520px; width: 100%;
+    padding: 40px;
+    position: relative;
+    transform: translateY(12px) scale(0.98);
+    transition: transform .3s ease;
+    max-height: 90vh; overflow: auto;
+  }
+  .modal-scrim.open .modal { transform: none; }
+  .modal-close {
+    position: absolute; top: 20px; right: 20px;
+    width: 36px; height: 36px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: transparent; border: 1px solid var(--line);
+    color: var(--navy);
+  }
+  .modal-close:hover { background: var(--navy); color: var(--bg); }
+  .modal h3 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: 32px; color: var(--navy); margin-bottom: 8px;
+  }
+  .modal p.sub { color: var(--ink-soft); margin-bottom: 28px; font-size: 15px; }
+  .form-field { display: grid; gap: 6px; margin-bottom: 16px; }
+  .form-field label { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); }
+  .form-field input, .form-field select, .form-field textarea {
+    font-family: 'Outfit', sans-serif;
+    padding: 12px 14px; background: transparent; color: var(--navy);
+    border: 1px solid var(--line); border-radius: 10px;
+    font-size: 15px; outline: none;
+    transition: border-color .2s ease;
+  }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+    border-color: var(--navy);
+  }
+  .form-field textarea { min-height: 80px; resize: vertical; }
+  .modal .wa-submit {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 24px; border-radius: 999px;
+    background: var(--whatsapp); color: white;
+    font-size: 15px; font-weight: 500; width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+    transition: background .2s ease;
+  }
+  .modal .wa-submit:hover { background: var(--whatsapp-d); }
+  .modal .tiny { font-size: 12px; color: var(--ink-mute); margin-top: 14px; text-align: center; }
+
+  /* reveal */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+</style>
+</head>
+<body>
+
+<!-- ============ Header ============ -->
+<header class="nav" id="nav">
+  <div class="container nav-row">
+    <a class="brand" href="#top" aria-label="Dra. Emanoela Gonçalves">
+      <img class="brand-mark" src="logo.svg" alt="Logo Dra. Emanoela Gonçalves" />
+      <span class="brand-text">
+        <span class="name">Dra. Emanoela Gonçalves</span>
+        <span class="sub">Cirurgia Vascular e Endovascular</span>
+      </span>
+    </a>
+
+    <nav class="primary" aria-label="Primária">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#clinicas">Clínicas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <a class="cta-whatsapp header-cta" href="#" data-modal="open">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7 0-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5H7.9c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2 2.3 1 2.8.9 3.3.8.5 0 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.8 1.5 5.4L2 22l4.7-1.2c1.6.9 3.4 1.4 5.3 1.4 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+      Agendar via WhatsApp
+    </a>
+
+    <button class="hamburger" aria-label="Abrir menu" id="hamb">
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobmenu" aria-hidden="true">
+    <div class="mobile-menu-head">
+      <div class="brand-line">
+        <img class="mk" src="logo.svg" alt="Logo Dra. Emanoela Gonçalves" />
+        <span>Emanoela Gonçalves</span>
+      </div>
+      <button class="mobile-close" id="mob-close" aria-label="Fechar menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul>
+      <li><a class="nav-link" href="#sobre">Sobre<span class="arrow">→</span></a></li>
+      <li><a class="nav-link" href="#servicos">Serviços<span class="arrow">→</span></a></li>
+      <li><a class="nav-link" href="#clinicas">Clínicas<span class="arrow">→</span></a></li>
+      <li><a class="nav-link" href="#contato">Contato<span class="arrow">→</span></a></li>
+    </ul>
+    <a class="cta-whatsapp" href="#" data-modal="open">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7 0-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5H7.9c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2 2.3 1 2.8.9 3.3.8.5 0 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.8 1.5 5.4L2 22l4.7-1.2c1.6.9 3.4 1.4 5.3 1.4 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+      Agendar via WhatsApp
+    </a>
+    <div class="mobile-menu-foot">CRM SP &middot; 243.777</div>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="hero-deco" aria-hidden="true"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">CRM SP &middot; 243777</span>
+      <span class="eyebrow">RQE SP &middot; 139187</span>
+      <h1>Cuidado <em>vascular</em><br/>que acolhe  e resolve.</h1>
+      <p class="lede">
+        Diagnóstico preciso, tratamento personalizado e acompanhamento próximo em toda a jornada vascular e endovascular. Atendimento humanizado em hospitais de referência de São Paulo.
+      </p>
+
+      <div class="hero-meta">
+        <div class="item">
+          <span class="k">Especialidade</span>
+          <span class="v">Cirurgia Vascular &amp; Endovascular</span>
+        </div>
+        <div class="item">
+          <span class="k">Registro</span>
+          <span class="v">CRM SP 243.777</span>
+        </div>
+        <div class="item">
+          <span class="k">Cidade</span>
+          <span class="v">São Paulo — SP</span>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" id="hero-wa-cta" href="#" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7 0-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5H7.9c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2 2.3 1 2.8.9 3.3.8.5 0 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.8 1.5 5.4L2 22l4.7-1.2c1.6.9 3.4 1.4 5.3 1.4 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+          Agendar consulta
+        </a>
+        <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+      </div>
+    </div>
+
+    <div class="hero-portrait reveal" style="transition-delay:.1s">
+      <img src="principal.png" alt="Dra. Emanoela Gonçalves" />
+    </div>
+  </div>
+</section>
+
+<!-- ============ Clinics carousel ============ -->
+<section class="clinics" id="clinicas">
+  <div class="container clinics-head">
+    <div>
+      <span class="eyebrow">Onde atendo</span>
+    </div>
+  </div>
+
+  <div class="carousel" id="carousel">
+    <button class="carousel-ctrl left"  id="prev" aria-label="Anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <button class="carousel-ctrl right" id="next" aria-label="Próximo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+
+    <div class="carousel-track" id="track">
+      <!-- set 1 -->
+      <div class="logo-cell"><div class="logo-mark"><span class="big">São Camilo</span><span class="sm">Rede Hospitalar</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big" style="letter-spacing:-0.02em;">Rede D'Or</span><span class="sm">São Luiz</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big">Américas</span><span class="sm">Rede de Saúde</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="mono"><span class="glyph">P</span>PRIME CARE</span><span class="sm">Clínica</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big" style="font-size:22px;">Endovascular</span><span class="sm">Anália Franco</span></div></div>
+      <!-- set 2 duplicate for seamless loop -->
+      <div class="logo-cell"><div class="logo-mark"><span class="big">São Camilo</span><span class="sm">Rede Hospitalar</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big" style="letter-spacing:-0.02em;">Rede D'Or</span><span class="sm">São Luiz</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big">Américas</span><span class="sm">Rede de Saúde</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="mono"><span class="glyph">P</span>PRIME CARE</span><span class="sm">Clínica</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big" style="font-size:22px;">Endovascular</span><span class="sm">Anália Franco</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ About ============ -->
+<section class="about" id="sobre">
+  <div class="container about-grid">
+    <div class="about-copy reveal">
+      <span class="eyebrow">Sobre a Dra. Emanoela</span>
+      <h2>Medicina vascular<br/>com <em>olhar humano</em>.</h2>
+      <p>
+        Formada em Medicina com residência e título de especialista em Cirurgia Vascular e Endovascular, a Dra. Emanoela Gonçalves dedica-se ao diagnóstico, prevenção e tratamento de doenças arteriais, venosas e linfáticas — unindo técnica avançada a uma escuta atenta.
+      </p>
+      <p>
+        Seu trabalho combina procedimentos minimamente invasivos com acompanhamento clínico de longo prazo, privilegiando condutas baseadas em evidência e na individualidade de cada paciente.
+      </p>
+
+      <blockquote class="about-pull">
+        Tratar vasos é também cuidar da história de quem caminha com eles. Cada consulta começa pelo escutar.
+      </blockquote>
+    </div>
+
+    <div class="about-media reveal" style="transition-delay:.1s">
+      <div class="m tall"><img src="clinica.png" alt="Equipe clínica" /></div>
+      <div class="m"><img src="procedimento.png" alt="Consultório" /></div>
+      <div class="m"><img src="equipe.png" alt="Procedimento" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Services ============ -->
+<section class="services" id="servicos">
+  <div class="container">
+    <div class="services-head reveal">
+      <div>
+        <span class="eyebrow">Serviços</span>
+        <h2 style="margin-top:24px;">Do diagnóstico ao tratamento <em>menos invasivo</em>.</h2>
+      </div>
+      <p>
+        Um cuidado integrado em angiologia, cirurgia vascular e procedimentos endovasculares — com foco em recuperação rápida, segurança e resultado estético.
+      </p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <span class="num">01 / Angiologia</span>
+        <h3>Consulta clínica vascular</h3>
+        <p>Avaliação completa das circulações arterial, venosa e linfática, com Doppler vascular quando indicado.</p>
+        <div class="svc-tags"><span class="svc-tag">Primeira consulta</span><span class="svc-tag">Check-up</span></div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="num">02 / Varizes</span>
+        <h3>Tratamento de varizes</h3>
+        <p>Escleroterapia, laser endovenoso e técnicas ecoguiadas, com planejamento individualizado por estágio da doença.</p>
+        <div class="svc-tags"><span class="svc-tag">Laser endovenoso</span><span class="svc-tag">Escleroterapia</span></div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="num">03 / Endovascular</span>
+        <h3>Procedimentos endovasculares</h3>
+        <p>Angioplastias, stents e embolizações realizadas por pequenas punções, com alta precoce e retorno rápido à rotina.</p>
+        <div class="svc-tags"><span class="svc-tag">Angioplastia</span><span class="svc-tag">Stent</span></div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="num">04 / Arterial</span>
+        <h3>Doença arterial periférica</h3>
+        <p>Avaliação e tratamento de obstruções, claudicação e pé diabético, com abordagem clínica e cirúrgica.</p>
+        <div class="svc-tags"><span class="svc-tag">Isquemia</span><span class="svc-tag">Pé diabético</span></div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="num">05 / Trombose</span>
+        <h3>Trombose venosa profunda</h3>
+        <p>Diagnóstico precoce, anticoagulação e prevenção de recidivas em gestantes, pós-cirúrgicos e viajantes.</p>
+        <div class="svc-tags"><span class="svc-tag">TVP</span><span class="svc-tag">Embolia pulmonar</span></div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="num">06 / Linfedema</span>
+        <h3>Linfedema e úlceras vasculares</h3>
+        <p>Protocolo de drenagem, curativos especializados e manejo clínico de úlceras venosas e arteriais.</p>
+        <div class="svc-tags"><span class="svc-tag">Drenagem linfática</span><span class="svc-tag">Curativos</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Contact ============ -->
+<section class="contact" id="contato">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Contato</span>
+      <h2>Vamos conversar <em>sobre você</em>.</h2>
+      <p class="contact-lede">
+        O agendamento mais ágil é pelo WhatsApp — também respondo pelas redes. Para casos hospitalares, entre em contato pela clínica de preferência.
+      </p>
+
+      <div class="channels">
+        <a class="channel" href="#" data-modal="open" aria-label="WhatsApp">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7 0-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5H7.9c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2 2.3 1 2.8.9 3.3.8.5 0 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.8 1.5 5.4L2 22l4.7-1.2c1.6.9 3.4 1.4 5.3 1.4 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></span>
+          <span class="v">Agendamento direto <small>Resposta em até 2h úteis</small></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </a>
+        <a class="channel" href="https://instagram.com/emanoelagoncalves" target="_blank" rel="noopener" aria-label="Instagram">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor"/></svg></span>
+          <span class="v">@emanoelagoncalves <small>Conteúdo e bastidores do consultório</small></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </a>
+        <a class="channel" href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.5 0h4.37v1.92h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v7.46h-4.56v-6.61c0-1.58-.03-3.6-2.19-3.6-2.19 0-2.53 1.71-2.53 3.48V22H7.72V8z"/></svg></span>
+          <span class="v">Dra. Emanoela Gonçalves <small>Perfil profissional e publicações</small></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </a>
+        <a class="channel" href="/cdn-cgi/l/email-protection#98fbf7f6ecf9ecf7d8fdf5f9f6f7fdf4f9fff7f6fbf9f4eefdebb6fbf7f5b6faea" aria-label="E-mail">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span class="v"><span class="__cf_email__" data-cfemail="10737f7e6471647f50757d717e7f757c71777f7e73717c6675633e737f7d3e7262">[email&#160;protected]</span> <small>Para imprensa e parcerias</small></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <aside class="map-card reveal" style="transition-delay:.1s">
+      <div class="map-loc-select-wrap">
+        <label for="map-location-select">Selecione a localidade</label>
+        <select class="map-loc-select" id="map-location-select">
+          <option value="analia">Clínica Endovascular São Paulo - Anália Franco</option>
+          <option value="primecare">Prime Care</option>
+        </select>
+      </div>
+      <div class="map-frame">
+        <iframe
+          id="map-iframe"
+          title="Mapa da Clínica Endovascular São Paulo - Unidade Anália Franco"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8067.028263152598!2d-46.567854424669896!3d-23.55741867880245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5fc0d1736e71%3A0x704a8e9f716c899b!2sCl%C3%ADnica%20Endovascular%20S%C3%A3o%20Paulo%20-%20Unidade%20An%C3%A1lia%20Franco!5e1!3m2!1spt-BR!2sbr!4v1776813303142!5m2!1spt-BR!2sbr"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="map-info">
+        <div class="place" id="map-place">Clínica Endovascular São Paulo - Unidade Anália Franco</div>
+        <div class="addr" id="map-addr">Rua Francisco Marengo, 1.734 — Tatuapé<br/>São Paulo &middot; SP &middot; 03313-001</div>
+        <a class="open-maps" id="map-open-link" href="https://maps.google.com/?q=Rua+Francisco+Marengo+1734+São+Paulo" target="_blank" rel="noopener">
+          Abrir no Google Maps
+          <svg viewBox="0 0 24 24" width="12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ Footer ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top" style="text-decoration:none;">
+          <span class="brand-mark">e</span>
+          <span class="brand-text">
+            <span class="name">Dra. Emanoela Gonçalves</span>
+            <span class="sub">CRM SP &middot; 243777</span>
+          </span>
+        </a>
+        <p class="footer-tag">Medicina vascular e endovascular com escuta, técnica e acompanhamento em toda a jornada.</p>
+      </div>
+
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#clinicas">Clínicas</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Redes</h4>
+        <ul>
+          <li><a href="https://instagram.com/emanoelagoncalves" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#" data-modal="open">WhatsApp</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#096a66677d687d66496c646867666c65686e66676a68657f6c7a276a6664276b7b">E-mail</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informações</h4>
+        <ul>
+          <li><a href="#">Política de privacidade</a></li>
+          <li><a href="#">Termos de atendimento</a></li>
+          <li><a href="#">LGPD</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Dra. Emanoela Gonçalves &middot; Todos os direitos reservados.</span>
+      <span>As informações deste site têm caráter informativo e não substituem consulta médica.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WhatsApp Floating ============ -->
+<a href="#" class="wa-fab" data-modal="open" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7 0-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5H7.9c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2 2.3 1 2.8.9 3.3.8.5 0 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.8 1.5 5.4L2 22l4.7-1.2c1.6.9 3.4 1.4 5.3 1.4 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+</a>
+
+<!-- ============ Modal ============ -->
+<div class="modal-scrim" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close" aria-label="Fechar" data-modal="close">
+      <svg viewBox="0 0 24 24" width="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <span class="eyebrow">Agendamento</span>
+    <h3 id="modal-title" style="margin-top:16px;">Vamos marcar sua consulta.</h3>
+    <p class="sub">Preencha rapidamente e você será direcionada(o) ao WhatsApp com a mensagem já pronta.</p>
+
+    <form id="wa-form">
+      <div class="form-field">
+        <label for="nm">Nome</label>
+        <input type="text" id="nm" required placeholder="Seu nome completo" />
+      </div>
+      <div class="form-field">
+        <label for="mo">Motivo da consulta</label>
+        <select id="mo" required>
+          <option value="">Selecione…</option>
+          <option>Primeira consulta / avaliação vascular</option>
+          <option>Varizes e tratamento estético</option>
+          <option>Procedimento endovascular</option>
+          <option>Doença arterial periférica</option>
+          <option>Trombose venosa</option>
+          <option>Outro assunto</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="ob">Observações (opcional)</label>
+        <textarea id="ob" placeholder="Conte brevemente o que está sentindo…"></textarea>
+      </div>
+      <button type="submit" class="wa-submit">
+        <svg viewBox="0 0 24 24" width="18" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7 0-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5H7.9c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2 2.3 1 2.8.9 3.3.8.5 0 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.8 1.5 5.4L2 22l4.7-1.2c1.6.9 3.4 1.4 5.3 1.4 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+        Continuar no WhatsApp
+      </button>
+      <p class="tiny">Ao continuar, você será redirecionada(o) para o aplicativo.</p>
+    </form>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const WHATSAPP_PHONE = '5511999999999';
+  const buildWhatsappUrl = (message) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+
+  /* ------ Nav scrolled state ------ */
+  const navEl = document.getElementById('nav');
+  const onScroll = () => navEl.classList.toggle('scrolled', window.scrollY > 8);
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ------ Hero direct WhatsApp CTA ------ */
+  const heroWaCta = document.getElementById('hero-wa-cta');
+  if (heroWaCta) {
+    heroWaCta.href = buildWhatsappUrl('Olá Dra. Emanoela! Vim pelo site e quero agendar uma consulta.');
+  }
+
+  /* ------ Mobile menu ------ */
+  const hamb = document.getElementById('hamb');
+  const mobClose = document.getElementById('mob-close');
+  const closeMenu = () => document.body.classList.remove('menu-open');
+  hamb.addEventListener('click', () => document.body.classList.toggle('menu-open'));
+  mobClose.addEventListener('click', closeMenu);
+  document.querySelectorAll('#mobmenu a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+  /* ------ Modal ------ */
+  const modal = document.getElementById('modal');
+  document.addEventListener('click', (e) => {
+    const t = e.target.closest('[data-modal]');
+    if (!t) return;
+    e.preventDefault();
+    if (t.dataset.modal === 'open')  { modal.classList.add('open'); document.body.style.overflow='hidden'; }
+    if (t.dataset.modal === 'close') { modal.classList.remove('open'); document.body.style.overflow=''; }
+  });
+  modal.addEventListener('click', (e) => { if (e.target === modal) { modal.classList.remove('open'); document.body.style.overflow=''; }});
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { modal.classList.remove('open'); document.body.style.overflow=''; }});
+
+  /* ------ WhatsApp deep link ------ */
+  document.getElementById('wa-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nm = document.getElementById('nm').value.trim();
+    const mo = document.getElementById('mo').value;
+    const ob = document.getElementById('ob').value.trim();
+    const msg = `Olá Dra. Emanoela! Meu nome é ${nm}. Gostaria de agendar uma consulta.\n\nMotivo: ${mo}${ob ? `\nObservações: ${ob}` : ''}`;
+    window.open(buildWhatsappUrl(msg), '_blank');
+  });
+
+  /* ------ Map locations selector ------ */
+  const mapLocations = {
+    analia: {
+      place: 'Clínica Endovascular São Paulo - Unidade Anália Franco',
+      addrHtml: 'Rua Francisco Marengo, 1.734 — Tatuapé<br/>São Paulo &middot; SP &middot; 03313-001',
+      mapsQuery: 'Clínica+Endovascular+São+Paulo+-+Unidade+Anália+Franco',
+      iframeSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8067.028263152598!2d-46.567854424669896!3d-23.55741867880245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5fc0d1736e71%3A0x704a8e9f716c899b!2sCl%C3%ADnica%20Endovascular%20S%C3%A3o%20Paulo%20-%20Unidade%20An%C3%A1lia%20Franco!5e1!3m2!1spt-BR!2sbr!4v1776813303142!5m2!1spt-BR!2sbr'
+    },
+    primecare: {
+      place: 'Prime Care',
+      addrHtml: 'R. Traipu, 509 — Perdizes<br/>São Paulo &middot; SP &middot; 01235-000',
+      mapsQuery: 'Prime+Care+R.+Traipu+509+Perdizes+São+Paulo',
+      iframeSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8068.308737587397!2d-46.666628136851216!3d-23.536551178728626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5823d366d67f%3A0xae2ec8a84863cc50!2sPrime%20Care!5e1!3m2!1spt-BR!2sbr!4v1776813353875!5m2!1spt-BR!2sbr'
+    }
+  };
+
+  const mapSelect = document.getElementById('map-location-select');
+  const mapPlace = document.getElementById('map-place');
+  const mapAddr = document.getElementById('map-addr');
+  const mapOpenLink = document.getElementById('map-open-link');
+  const mapIframe = document.getElementById('map-iframe');
+
+  const renderMapLocation = (key) => {
+    const location = mapLocations[key] || mapLocations.analia;
+    mapPlace.textContent = location.place;
+    mapAddr.innerHTML = location.addrHtml;
+    mapOpenLink.href = `https://maps.google.com/?q=${location.mapsQuery}`;
+    mapIframe.src = location.iframeSrc;
+    mapIframe.title = `Mapa da unidade ${location.place}`;
+  };
+
+  if (mapSelect) {
+    mapSelect.addEventListener('change', (e) => renderMapLocation(e.target.value));
+    renderMapLocation(mapSelect.value);
+  }
+
+  /* ------ Carousel manual controls ------ */
+  const track = document.getElementById('track');
+  const carousel = document.getElementById('carousel');
+  let offset = 0;
+  const CELL = 260;
+  const setX = () => { track.style.transform = `translateX(${offset}px)`; };
+  const pause = () => { track.style.animation = 'none'; };
+  document.getElementById('prev').addEventListener('click', () => {
+    pause();
+    offset = Math.min(0, offset + CELL);
+    setX();
+  });
+  document.getElementById('next').addEventListener('click', () => {
+    pause();
+    const max = -(CELL * 5);
+    offset = offset <= max ? 0 : offset - CELL;
+    setX();
+  });
+
+  /* ------ Reveal on scroll ------ */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
