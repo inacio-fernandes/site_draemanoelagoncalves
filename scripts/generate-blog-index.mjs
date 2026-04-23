@@ -214,14 +214,76 @@ function renderPostPage(post, bodyHtml) {
     ? `style="background-image: linear-gradient(180deg, rgba(15,45,58,0.08), rgba(15,45,58,0.34)), url('${escapeAttribute(post.cover)}');"`
     : '';
 
+  const siteUrl = 'https://draemanoelagoncalves.com.br';
+  const postUrl = `${siteUrl}/blog/${post.slug}/`;
+  const ogImage = post.cover
+    ? (post.cover.startsWith('http') ? post.cover : `${siteUrl}${post.cover}`)
+    : `${siteUrl}/assets/principal.png`;
+  const descEsc = escapeAttribute(post.excerpt || post.title);
+
   return `<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>${escapeHtml(post.title)} | Blog da Dra. Emanoela Gonçalves</title>
-  <meta name="description" content="${escapeAttribute(post.excerpt || post.title)}" />
+  <meta name="description" content="${descEsc}" />
+  <link rel="canonical" href="${postUrl}" />
   <link rel="icon" href="/assets/logo.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="${postUrl}" />
+  <meta property="og:title" content="${escapeAttribute(post.title)} | Blog da Dra. Emanoela Gonçalves" />
+  <meta property="og:description" content="${descEsc}" />
+  <meta property="og:image" content="${escapeAttribute(ogImage)}" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Dra. Emanoela Gonçalves" />
+  ${post.dateISO ? `<meta property="article:published_time" content="${post.dateISO}" />` : ''}
+  <meta property="article:author" content="Dra. Emanoela Gonçalves" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${escapeAttribute(post.title)}" />
+  <meta name="twitter:description" content="${descEsc}" />
+  <meta name="twitter:image" content="${escapeAttribute(ogImage)}" />
+
+  <!-- JSON-LD: BlogPosting + Breadcrumb -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "${escapeAttribute(post.title)}",
+      "description": "${descEsc}",
+      "url": "${postUrl}",
+      "image": "${escapeAttribute(ogImage)}",
+      ${post.dateISO ? `"datePublished": "${post.dateISO}",` : ''}
+      "dateModified": "${post.dateISO || new Date().toISOString()}",
+      "author": {
+        "@type": "Person",
+        "name": "Dra. Emanoela Gonçalves",
+        "url": "https://draemanoelagoncalves.com.br/",
+        "jobTitle": "Cirurgiã Vascular e Endovascular"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Dra. Emanoela Gonçalves",
+        "url": "https://draemanoelagoncalves.com.br/"
+      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "${postUrl}" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://draemanoelagoncalves.com.br/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://draemanoelagoncalves.com.br/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "${escapeAttribute(post.title)}", "item": "${postUrl}" }
+      ]
+    }
+  ]
+  <\/script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -511,3 +573,36 @@ for (const post of posts) {
 
 await writeFile(outputPath, `${JSON.stringify({ posts }, null, 2)}\n`, 'utf8');
 console.log(`Wrote ${posts.length} posts to ${outputPath}`);
+
+// Generate sitemap.xml
+const siteUrl = 'https://draemanoelagoncalves.com.br';
+const today = new Date().toISOString().split('T')[0];
+
+const staticUrls = [
+  { loc: `${siteUrl}/`, priority: '1.0', changefreq: 'monthly' },
+  { loc: `${siteUrl}/blog/`, priority: '0.8', changefreq: 'weekly' },
+];
+
+const postUrls = posts.map(post => ({
+  loc: `${siteUrl}/blog/${post.slug}/`,
+  lastmod: post.dateISO ? post.dateISO.split('T')[0] : today,
+  priority: '0.7',
+  changefreq: 'monthly',
+}));
+
+const allUrls = [...staticUrls, ...postUrls];
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${allUrls.map(u => `  <url>
+    <loc>${u.loc}</loc>
+    ${u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : `<lastmod>${today}</lastmod>`}
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
+  </url>`).join('\n')}
+</urlset>
+`;
+
+const sitemapPath = path.join(rootDir, 'sitemap.xml');
+await writeFile(sitemapPath, sitemapXml, 'utf8');
+console.log(`Wrote sitemap.xml with ${allUrls.length} URLs`);
