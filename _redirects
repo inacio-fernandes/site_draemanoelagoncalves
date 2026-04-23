@@ -1,0 +1,6 @@
+# Admin loads from admin/index.html
+/admin    /admin/index.html    200
+/admin/*    /admin/index.html    200
+
+# Everything else is SPA routing to home page (enables hash-based recovery)
+/*    /index.html    200
