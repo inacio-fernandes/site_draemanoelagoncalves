@@ -6,6 +6,28 @@
     <title>Painel - Dra. Emanoela</title>
   </head>
   <body>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      (function () {
+        if (!window.netlifyIdentity) return;
+
+        const tokenPattern = /(invite_token|recovery_token|confirmation_token|email_change_token)=/;
+        const tokenSource = `${window.location.search || ''}${window.location.hash || ''}`;
+        const hasIdentityToken = tokenPattern.test(tokenSource);
+
+        window.netlifyIdentity.on('init', (user) => {
+          if (!user && hasIdentityToken) {
+            window.netlifyIdentity.open();
+          }
+        });
+
+        window.netlifyIdentity.on('login', () => {
+          window.location.replace('/admin/');
+        });
+
+        window.netlifyIdentity.init();
+      })();
+    </script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html>

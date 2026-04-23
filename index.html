@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Dra. Emanoela Gonçalves — Medicina Vascular e Endovascular</title>
 <meta name="description" content="Dra. Emanoela Gonçalves, médica vascular e endovascular. CRM SP-243777. Atendimento em São Paulo — Rede São Camilo, Rede D'Or, Rede Américas, Prime Care, Anália Franco." />
-<link rel="icon" type="image/svg+xml" href="assets/logo_dark.png" />
-<link rel="shortcut icon" href="assets/logo.ico_dark.png" />
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+<link rel="alternate icon" type="image/png" href="assets/logo_dark.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -1104,9 +1104,9 @@
           <span class="v">Dra. Emanoela Gonçalves <small>Perfil profissional e publicações</small></span>
           <span class="arrow"><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </a>
-        <a class="channel" href="/cdn-cgi/l/email-protection#98fbf7f6ecf9ecf7d8fdf5f9f6f7fdf4f9fff7f6fbf9f4eefdebb6fbf7f5b6faea" aria-label="E-mail">
+        <a class="channel" href="mailto:contato@emanoelagoncalves.com.br" aria-label="E-mail">
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-          <span class="v"><span class="__cf_email__" data-cfemail="10737f7e6471647f50757d717e7f757c71777f7e73717c6675633e737f7d3e7262">[email&#160;protected]</span> <small>Para imprensa e parcerias</small></span>
+          <span class="v">contato@emanoelagoncalves.com.br <small>Para imprensa e parcerias</small></span>
           <span class="arrow"><svg viewBox="0 0 24 24" width="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </a>
       </div>
@@ -1179,7 +1179,7 @@
           <li><a href="https://instagram.com/emanoelagoncalves" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="#" data-modal="open">WhatsApp</a></li>
-          <li><a href="/cdn-cgi/l/email-protection#096a66677d687d66496c646867666c65686e66676a68657f6c7a276a6664276b7b">E-mail</a></li>
+          <li><a href="mailto:contato@emanoelagoncalves.com.br">E-mail</a></li>
         </ul>
       </div>
       <div>
@@ -1246,14 +1246,20 @@
 
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   const WHATSAPP_PHONE = '5511999999999';
   const buildWhatsappUrl = (message) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+  const identityTokenPattern = /(invite_token|recovery_token|confirmation_token|email_change_token)=/;
+  const identityTokenSource = `${window.location.search || ''}${window.location.hash || ''}`;
+  const hasIdentityToken = identityTokenPattern.test(identityTokenSource);
+
+  if (hasIdentityToken && !window.location.pathname.startsWith('/admin')) {
+    window.location.replace(`/admin/${window.location.search || ''}${window.location.hash || ''}`);
+  }
 
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on('init', (user) => {
-      const hash = window.location.hash || '';
-      if (!user && (hash.includes('recovery_token') || hash.includes('invite_token'))) {
+      if (!user && hasIdentityToken) {
         window.netlifyIdentity.open();
       }
     });
