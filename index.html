@@ -717,6 +717,12 @@
     font-size: 13px; color: var(--navy); margin-top: 12px;
     padding-bottom: 2px; border-bottom: 1px solid var(--navy);
   }
+  .map-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 2px;
+  }
 
   @media (max-width: 900px) {
     .contact { padding: 80px 0; }
@@ -970,17 +976,17 @@
 
     <div class="carousel-track" id="track">
       <!-- set 1 -->
-      <div class="logo-cell"><img src="assets/sao_camilo.png" alt="São Camilo" /></div>
-      <div class="logo-cell"><img src="assets/rede_dor.png" alt="Rede D'Or" /></div>
-      <div class="logo-cell"><img src="assets/image.png" alt="Américas Medicina e Saúde" /></div>
-      <div class="logo-cell"><img src="assets/prime_care.png" alt="Prime Care" /></div>
-      <div class="logo-cell"><img src="assets/endovascular.png" alt="Clínica Endovascular Anália Franco" /></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big">São Camilo</span><span class="sm">Rede Hospitalar</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big" style="letter-spacing:-0.02em;">Rede D'Or</span><span class="sm">São Luiz</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big">Américas</span><span class="sm">Rede de Saúde</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="mono"><span class="glyph">P</span>PRIME CARE</span><span class="sm">Clínica</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big" style="font-size:22px;">Endovascular</span><span class="sm">Anália Franco</span></div></div>
       <!-- set 2 duplicate for seamless loop -->
-      <div class="logo-cell"><img src="assets/sao_camilo.png" alt="São Camilo" /></div>
-      <div class="logo-cell"><img src="assets/rede_dor.png" alt="Rede D'Or" /></div>
-      <div class="logo-cell"><img src="assets/image.png" alt="Américas Medicina e Saúde" /></div>
-      <div class="logo-cell"><img src="assets/prime_care.png" alt="Prime Care" /></div>
-      <div class="logo-cell"><img src="assets/endovascular.png" alt="Clínica Endovascular Anália Franco" /></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big">São Camilo</span><span class="sm">Rede Hospitalar</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big" style="letter-spacing:-0.02em;">Rede D'Or</span><span class="sm">São Luiz</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big">Américas</span><span class="sm">Rede de Saúde</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="mono"><span class="glyph">P</span>PRIME CARE</span><span class="sm">Clínica</span></div></div>
+      <div class="logo-cell"><div class="logo-mark"><span class="big" style="font-size:22px;">Endovascular</span><span class="sm">Anália Franco</span></div></div>
     </div>
   </div>
 </section>
@@ -1125,10 +1131,16 @@
       <div class="map-info">
         <div class="place" id="map-place">Clínica Endovascular São Paulo - Unidade Anália Franco</div>
         <div class="addr" id="map-addr">Rua Francisco Marengo, 1.734 — Tatuapé<br/>São Paulo &middot; SP &middot; 03313-001</div>
-        <a class="open-maps" id="map-open-link" href="https://maps.google.com/?q=Rua+Francisco+Marengo+1734+São+Paulo" target="_blank" rel="noopener">
-          Abrir no Google Maps
-          <svg viewBox="0 0 24 24" width="12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg>
-        </a>
+        <div class="map-actions">
+          <a class="open-maps" id="map-open-link" href="https://maps.google.com/?q=Rua+Francisco+Marengo+1734+São+Paulo" target="_blank" rel="noopener">
+            Abrir no Google Maps
+            <svg viewBox="0 0 24 24" width="12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+          <a class="open-maps" id="map-review-link" href="https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica+Endovascular+S%C3%A3o+Paulo+-+Unidade+An%C3%A1lia+Franco" target="_blank" rel="noopener">
+            Avalie no Google
+            <svg viewBox="0 0 24 24" width="12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.7 5.47 6.03.88-4.36 4.25 1.03 6-5.4-2.84-5.4 2.84 1.03-6L3.27 9.35l6.03-.88L12 3z"/></svg>
+          </a>
+        </div>
       </div>
     </aside>
   </div>
@@ -1282,12 +1294,14 @@
       place: 'Clínica Endovascular São Paulo - Unidade Anália Franco',
       addrHtml: 'Rua Francisco Marengo, 1.734 — Tatuapé<br/>São Paulo &middot; SP &middot; 03313-001',
       mapsQuery: 'Clínica+Endovascular+São+Paulo+-+Unidade+Anália+Franco',
+      reviewUrl: 'https://maps.app.goo.gl/Nbss2EZ7m14T4LsGA',
       iframeSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8067.028263152598!2d-46.567854424669896!3d-23.55741867880245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5fc0d1736e71%3A0x704a8e9f716c899b!2sCl%C3%ADnica%20Endovascular%20S%C3%A3o%20Paulo%20-%20Unidade%20An%C3%A1lia%20Franco!5e1!3m2!1spt-BR!2sbr!4v1776813303142!5m2!1spt-BR!2sbr'
     },
     primecare: {
       place: 'Prime Care',
       addrHtml: 'R. Traipu, 509 — Perdizes<br/>São Paulo &middot; SP &middot; 01235-000',
       mapsQuery: 'Prime+Care+R.+Traipu+509+Perdizes+São+Paulo',
+      reviewUrl: 'https://maps.app.goo.gl/VB6axdQHmk1eiU3TA',
       iframeSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8068.308737587397!2d-46.666628136851216!3d-23.536551178728626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5823d366d67f%3A0xae2ec8a84863cc50!2sPrime%20Care!5e1!3m2!1spt-BR!2sbr!4v1776813353875!5m2!1spt-BR!2sbr'
     }
   };
@@ -1296,6 +1310,7 @@
   const mapPlace = document.getElementById('map-place');
   const mapAddr = document.getElementById('map-addr');
   const mapOpenLink = document.getElementById('map-open-link');
+  const mapReviewLink = document.getElementById('map-review-link');
   const mapIframe = document.getElementById('map-iframe');
 
   const renderMapLocation = (key) => {
@@ -1303,6 +1318,7 @@
     mapPlace.textContent = location.place;
     mapAddr.innerHTML = location.addrHtml;
     mapOpenLink.href = `https://maps.google.com/?q=${location.mapsQuery}`;
+    mapReviewLink.href = location.reviewUrl;
     mapIframe.src = location.iframeSrc;
     mapIframe.title = `Mapa da unidade ${location.place}`;
   };
