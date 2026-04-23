@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog | Dra. Emanoela Gonçalves</title>
+  <meta name="description" content="Artigos e orientações da Dra. Emanoela Gonçalves sobre saúde vascular, prevenção e cuidados com os vasos." />
+  <link rel="icon" href="/assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f1e8;
+      --bg-alt: #efe7d8;
+      --card: #fffaf1;
+      --navy: #0f2d3a;
+      --navy-2: #163d4d;
+      --ink: #20343d;
+      --ink-soft: #54656d;
+      --line: rgba(15,45,58,0.12);
+      --accent: #b89968;
+      --shadow: 0 28px 80px -36px rgba(15,45,58,0.34);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(184,153,104,0.18), transparent 24%),
+        radial-gradient(circle at 80% 10%, rgba(15,45,58,0.08), transparent 28%),
+        linear-gradient(180deg, var(--bg) 0%, #f8f4eb 35%, #f4ecdf 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(246,241,232,0.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(15,45,58,0.08);
+    }
+    .topbar-row {
+      min-height: 86px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand {
+      display: inline-flex; align-items: center; gap: 14px;
+      min-width: 0;
+    }
+    .brand-mark {
+      width: 52px; height: 52px; padding: 6px; border-radius: 50%;
+      border: 1px solid var(--line); background: var(--card); object-fit: contain;
+      flex-shrink: 0;
+      box-shadow: 0 12px 28px -20px rgba(15,45,58,0.35);
+    }
+    .brand-text { display: grid; gap: 2px; min-width: 0; }
+    .brand-text .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 2vw, 28px);
+      line-height: 1;
+      color: var(--navy);
+    }
+    .brand-text .sub {
+      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--navy);
+      background: rgba(255,255,255,0.45);
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .back-link:hover {
+      transform: translateY(-1px);
+      background: var(--card);
+      border-color: rgba(15,45,58,0.2);
+    }
+
+    .hero {
+      padding: 42px 0 18px;
+    }
+    .hero-bar {
+      display: flex; align-items: end; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+      padding: 22px 0 0;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 26px; height: 1px; background: currentColor; opacity: .75;
+    }
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      margin: 0;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1.02;
+    }
+    h1 { font-size: clamp(42px, 6vw, 74px); max-width: 10ch; }
+    .hero-lead {
+      margin: 16px 0 0;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 54ch;
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+      color: var(--navy);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .section {
+      padding: 18px 0 72px;
+    }
+    .section-head {
+      display: flex; align-items: end; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+    .section-head h2 { font-size: clamp(30px, 4vw, 48px); }
+    .section-head p {
+      margin: 0;
+      max-width: 42ch;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+    .post-card {
+      overflow: hidden;
+      grid-column: span 6;
+      display: grid;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.62));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      min-height: 100%;
+    }
+    .post-card.featured {
+      grid-column: span 12;
+      grid-template-columns: 1.08fr .92fr;
+      min-height: 380px;
+    }
+    .post-media {
+      position: relative;
+      min-height: 240px;
+      background:
+        linear-gradient(180deg, rgba(15,45,58,0.05), rgba(15,45,58,0.18)),
+        radial-gradient(circle at 20% 20%, rgba(184,153,104,0.38), transparent 32%),
+        linear-gradient(135deg, #d7e2e5, #c9d6da);
+    }
+    .post-media.covered {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .post-media::after {
+      content: attr(data-badge);
+      position: absolute; left: 18px; top: 18px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(15,45,58,0.88);
+      color: #fff;
+      font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+    }
+    .post-body {
+      padding: 24px;
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+    .post-meta {
+      display: flex; flex-wrap: wrap; gap: 10px 14px;
+      color: var(--ink-soft);
+      font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .post-body h3 { font-size: clamp(26px, 3vw, 36px); }
+    .post-body p {
+      margin: 0;
+      line-height: 1.75;
+      color: var(--ink-soft);
+    }
+    .post-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 6px;
+      color: var(--navy);
+      font-size: 14px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid var(--navy);
+      width: fit-content;
+    }
+
+    .empty-state {
+      padding: 28px;
+      border-radius: 18px;
+      border: 1px dashed rgba(15,45,58,0.2);
+      background: rgba(255,255,255,0.45);
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+    .empty-state strong { color: var(--navy); }
+
+    footer {
+      padding: 28px 0 54px;
+      color: var(--ink-soft);
+    }
+    .footer-row {
+      display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 960px) {
+      .topbar-row { min-height: 76px; }
+      .post-card, .post-card.featured { grid-column: span 12; grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .container { width: min(100% - 24px, 1160px); }
+      .brand-text .sub { letter-spacing: .14em; white-space: normal; }
+      h1 { max-width: 11ch; }
+      .hero { padding-top: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-row">
+      <a class="brand" href="/" aria-label="Voltar para a página inicial">
+        <img class="brand-mark" src="/assets/logo.svg" alt="Logo Dra. Emanoela Gonçalves" />
+        <span class="brand-text">
+          <span class="name">Blog</span>
+          <span class="sub">Dra. Emanoela Gonçalves</span>
+        </span>
+      </a>
+      <a class="back-link" href="/">
+        <span>Voltar para a home</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-bar">
+        <div>
+          <span class="eyebrow">Publicações</span>
+          <h1>Cards dos artigos.</h1>
+          <p class="hero-lead">
+            Esta página lê automaticamente os posts publicados em <strong>content/blog</strong> e monta os cards para você.
+          </p>
+        </div>
+        <a class="pill" href="/admin/" target="_blank" rel="noopener">Abrir Decap CMS →</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Últimos posts</span>
+            <h2>Artigos publicados</h2>
+          </div>
+          <p>O conteúdo abaixo vem do índice gerado automaticamente. Ao criar um novo Markdown, rode o gerador e o card aparece aqui.</p>
+        </div>
+
+        <div id="posts" class="post-grid" aria-live="polite"></div>
+
+        <div id="empty-state" class="empty-state" hidden>
+          <strong>Nenhum post encontrado.</strong> Publique um Markdown em <code>content/blog</code> e rode o gerador para criar o índice.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>Blog da Dra. Emanoela Gonçalves</span>
+      <span>Saúde vascular, prevenção e acompanhamento.</span>
+    </div>
+  </footer>
+
+  <script>
+    const postsRoot = document.getElementById('posts');
+    const emptyState = document.getElementById('empty-state');
+
+    const fallbackDate = (dateLabel) => dateLabel || 'Sem data';
+
+    const renderPostCard = (post, index) => {
+      const article = document.createElement('article');
+      article.className = 'post-card' + (index === 0 ? ' featured' : '');
+
+      const media = document.createElement('div');
+      media.className = 'post-media';
+      if (post.cover) {
+        media.classList.add('covered');
+        media.style.backgroundImage = `linear-gradient(180deg, rgba(15,45,58,0.05), rgba(15,45,58,0.18)), url(${post.cover})`;
+      }
+      media.setAttribute('data-badge', index === 0 ? 'Destaque' : 'Artigo');
+      article.appendChild(media);
+
+      const body = document.createElement('div');
+      body.className = 'post-body';
+      body.innerHTML = `
+        <div class="post-meta">
+          <span>${fallbackDate(post.dateLabel)}</span>
+          <span>${post.slug.replace(/-/g, ' ')}</span>
+        </div>
+        <h3>${post.title}</h3>
+        <p>${post.excerpt || 'Clique para abrir o post.'}</p>
+        <a class="post-link" href="${post.path}" target="_blank" rel="noopener">Abrir conteúdo <span aria-hidden="true">→</span></a>
+      `;
+      article.appendChild(body);
+      return article;
+    };
+
+    async function loadPosts() {
+      try {
+        const response = await fetch('/content/blog/index.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error('Index não encontrado');
+        const data = await response.json();
+        const posts = Array.isArray(data.posts) ? data.posts : [];
+
+        if (!posts.length) {
+          emptyState.hidden = false;
+          return;
+        }
+
+        postsRoot.replaceChildren(...posts.map((post, index) => renderPostCard(post, index)));
+      } catch (error) {
+        emptyState.hidden = false;
+        emptyState.innerHTML = '<strong>Não foi possível carregar os posts.</strong> Verifique se o arquivo <code>content/blog/index.json</code> existe e se o servidor está servindo a pasta do site.';
+      }
+    }
+
+    loadPosts();
+  </script>
+</body>
+</html>

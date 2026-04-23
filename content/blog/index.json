@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "slug": "primeiro-post",
+      "title": "Primeiro post do blog",
+      "date": "2026-04-23T09:00:00-03:00",
+      "dateLabel": "23 de abr. de 2026",
+      "dateISO": "2026-04-23T12:00:00.000Z",
+      "cover": "/assets/principal.png",
+      "excerpt": "Post de teste para validar o Decap CMS com a nova aba Blog.",
+      "path": "/blog/primeiro-post/",
+      "body": "Este é um post de teste criado para validar o painel do Decap CMS.\n\nAqui você pode começar a escrever artigos sobre saúde vascular, prevenção, varizes e orientações para pacientes."
+    },
+    {
+      "slug": "teste-titulo-1",
+      "title": "teste titulo rweqreqw",
+      "date": "2026-04-23T00:35:00.000-03:00",
+      "dateLabel": "23 de abr. de 2026",
+      "dateISO": "2026-04-23T03:35:00.000Z",
+      "cover": "/assets/uploads/645729436_18564994843045772_561412208024753043_n.jpg",
+      "excerpt": "fasgf",
+      "path": "/blog/teste-titulo-1/",
+      "body": "* dsgdsgdsg \n\n`sdfgdsgds`\n\n`sdggsd`\n\n> `dsgdfsgf`\n>\n> ```\n> sdgsdgdfg\n> ```"
+    },
+    {
+      "slug": "teste-titulo",
+      "title": "teste titulo",
+      "date": "2026-04-23T00:35:00.000-03:00",
+      "dateLabel": "23 de abr. de 2026",
+      "dateISO": "2026-04-23T03:35:00.000Z",
+      "cover": "/assets/uploads/645729436_18564994843045772_561412208024753043_n.jpg",
+      "excerpt": "fasgf",
+      "path": "/blog/teste-titulo/",
+      "body": "* dsgdsgdsg \n\n`sdfgdsgds`\n\n`sdggsd`\n\n> `dsgdfsgf`\n>\n> ```\n> sdgsdgdfg\n> ```"
+    }
+  ]
+}

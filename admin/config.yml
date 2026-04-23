@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: inacio-fernandes/site_draemanoelagoncalves
+  branch: main
+
+local_backend: true
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: "/"
+logo_url: "/assets/logo.svg"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Post"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    sortable_fields: ["date", "title", "published"]
+    view_groups:
+      - label: "Publicado"
+        field: "published"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Publicado", name: "published", widget: "boolean", default: true }
+      - { label: "Imagem de capa", name: "cover", widget: "image", required: false }
+      - { label: "Resumo", name: "excerpt", widget: "text", required: false }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
