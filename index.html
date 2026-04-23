@@ -1244,9 +1244,24 @@
   </div>
 </div>
 
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const WHATSAPP_PHONE = '5511999999999';
   const buildWhatsappUrl = (message) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', (user) => {
+      const hash = window.location.hash || '';
+      if (!user && (hash.includes('recovery_token') || hash.includes('invite_token'))) {
+        window.netlifyIdentity.open();
+      }
+    });
+    window.netlifyIdentity.on('login', () => {
+      window.location.href = '/admin/';
+    });
+    window.netlifyIdentity.init();
+  }
 
   /* ------ Nav scrolled state ------ */
   const navEl = document.getElementById('nav');

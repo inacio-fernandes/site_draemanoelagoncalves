@@ -7,8 +7,8 @@ local_backend: true
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-display_url: "/"
-site_url: "/admin/"
+display_url: "https://draemanoelagoncalves.com.br/"
+site_url: "https://draemanoelagoncalves.com.br/"
 logo_url: "/assets/logo.svg"
 
 collections:
