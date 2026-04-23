@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: inacio-fernandes/site_draemanoelagoncalves
+  name: git-gateway
   branch: main
 
 local_backend: true
