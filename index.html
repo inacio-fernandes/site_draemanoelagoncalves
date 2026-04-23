@@ -1253,14 +1253,10 @@
   const identityTokenSource = `${window.location.search || ''}${window.location.hash || ''}`;
   const hasIdentityToken = identityTokenPattern.test(identityTokenSource);
 
-  if (hasIdentityToken && !window.location.pathname.startsWith('/admin')) {
-    window.location.replace(`/admin/${window.location.search || ''}${window.location.hash || ''}`);
-  }
-
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on('init', (user) => {
       if (!user && hasIdentityToken) {
-        window.netlifyIdentity.open();
+        setTimeout(() => window.netlifyIdentity.open('login'), 150);
       }
     });
     window.netlifyIdentity.on('login', () => {
