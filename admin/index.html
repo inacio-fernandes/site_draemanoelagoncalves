@@ -7,11 +7,16 @@
   </head>
   <body>
     <script>
+      // If there's an identity token in the URL, send back to home immediately
       (function () {
-        const tokenPattern = /(invite_token|recovery_token|confirmation_token|email_change_token)=/;
-        const tokenSource = `${window.location.search || ''}${window.location.hash || ''}`;
-        if (tokenPattern.test(tokenSource)) {
-          window.location.replace(`/${window.location.search || ''}${window.location.hash || ''}`);
+        const fullUrl = `${window.location.search || ''}${window.location.hash || ''}`;
+        if (/(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(fullUrl)) {
+          // Use href instead of replace - href is more reliable
+          window.location.href = `/${fullUrl}`;
+          // Double-check with replace as backup
+          setTimeout(() => {
+            window.location.replace(`/${fullUrl}`);
+          }, 100);
         }
       })();
     </script>

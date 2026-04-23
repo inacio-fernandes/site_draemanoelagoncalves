@@ -1249,19 +1249,14 @@
 <script>
   const WHATSAPP_PHONE = '5511999999999';
   const buildWhatsappUrl = (message) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
-  const identityTokenPattern = /(invite_token|recovery_token|confirmation_token|email_change_token)=/;
-  const identityTokenSource = `${window.location.search || ''}${window.location.hash || ''}`;
-  const hasIdentityToken = identityTokenPattern.test(identityTokenSource);
 
   if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', (user) => {
-      if (!user && hasIdentityToken) {
-        setTimeout(() => window.netlifyIdentity.open('login'), 150);
-      }
-    });
+    // Redirect to admin after successful login
     window.netlifyIdentity.on('login', () => {
       window.location.href = '/admin/';
     });
+    
+    // Initialize the widget - it will automatically detect recovery/invite tokens in the URL
     window.netlifyIdentity.init();
   }
 
