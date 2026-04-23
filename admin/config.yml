@@ -7,7 +7,8 @@ local_backend: true
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-site_url: "/"
+display_url: "/"
+site_url: "/admin/"
 logo_url: "/assets/logo.svg"
 
 collections:
