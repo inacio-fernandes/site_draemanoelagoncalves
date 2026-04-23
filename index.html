@@ -1251,24 +1251,13 @@
   const buildWhatsappUrl = (message) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
 
   if (window.netlifyIdentity) {
-    const hasToken = /(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(
-      `${window.location.search || ''}${window.location.hash || ''}`
-    );
-
-    window.netlifyIdentity.on('login', () => {
-      window.location.href = '/admin/';
-    });
-    
     window.netlifyIdentity.on('init', (user) => {
-      // If there's a recovery/invite token and user is not logged in, open the modal
-      if (!user && hasToken) {
-        // Open the login modal - it will detect the token and show the appropriate flow
-        window.netlifyIdentity.open();
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
       }
     });
-    
-    // Initialize the widget
-    window.netlifyIdentity.init();
   }
 
   /* ------ Nav scrolled state ------ */
