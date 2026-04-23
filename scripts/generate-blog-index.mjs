@@ -445,7 +445,6 @@ function renderPostPage(post, bodyHtml) {
             <div>Publicado em ${escapeHtml(post.dateLabel || 'Sem data')}</div>
             <div class="article-actions">
               <a class="action-link" href="/blog/">Ver outros artigos</a>
-              <a class="action-link primary" href="/admin/" target="_blank" rel="noopener">Abrir CMS</a>
             </div>
           </div>
         </article>
